@@ -1,0 +1,4 @@
+use crudnodejsmysql;
+
+show tables;
+
