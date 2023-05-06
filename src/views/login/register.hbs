@@ -1,0 +1,177 @@
+<div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200 rounded-lg shadow-lg text-gray-800">
+  
+   <!-- Título del formulario -->  
+  <h1 class="text-5x1 font-bold text-center">Encuesta 2023</h1>  
+  
+  
+  <!-- Formulario para registrar usuarios -->
+  <form method="POST" class="mt-4" name="loginForm" >
+
+    <b> 1. Fecha actual</b>
+    <!-- Campo de entrada para fecha -->
+   <input type="text" name="fecha"  placeholder="00/00/0000" id="fecha-input" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+    
+            <!-- Script para establecer automáticamente la fecha actual en el campo de entrada -->
+            <script>
+              // Obtener el elemento del campo de entrada por ID
+              const fechaInput = document.getElementById('fecha-input');
+              // Obtener la fecha actual
+              const hoy = new Date();
+              const dia = hoy.getDate().toString().padStart(2, '0');
+              const mes = (hoy.getMonth() + 1).toString().padStart(2, '0'); // Enero es 0
+              const año = hoy.getFullYear();
+              // Establecer el valor del campo de entrada en la fecha actual
+              fechaInput.value = `${dia}/${mes}/${año}`;
+            </script>
+
+     <b> 2. Ingresar correo </b>
+     <!-- Campo de entrada para correo -->
+    <input type="email" name="correo" placeholder="ejemplo@gmail.com" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+        
+    <b> 3. Ingresar edad  </b>
+    <!-- Campo de entrada para años cumplidos -->
+    <input type="number" name="años" placeholder="Años cumplidos" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required min="0" max="130">
+      
+    <b> 4. Ingresar nombre preferido de persona entrevistada </b>
+    <!-- Campo de entrada para nombre preferido -->
+    <input type="text" name="nombrePrefe"  placeholder="Nombre preferido" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+
+    <b> 5. Ingresar nombre legal completo de persona entrevistada </b>
+    <!-- Campo de entrada para nombre legal -->
+    <input type="text" name="nombreLegal"  placeholder="Nombre legal completo" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+
+    <b> 6. Ingresar teléfono (opcional) </b>
+    <!-- Campo de entrada para el telefono -->
+    <input type="text" name="telefono"  placeholder="Celular o Casa" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+    
+    <b> 7. Ingresar identidad de genero</b>
+    <!-- Selector para la identidad de género -->
+    <select name="identidad" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+      <option value="" disabled selected>Selecciona una opción</option>
+      <option value="Hombre trans">Hombre trans</option>
+      <option value="Mujer trans">Mujer trans</option>
+      <option value="Travesti">Travesti</option>
+      <option value="No binario">No binario</option>
+    </select>
+
+    <b> 8. Ingresar sexo asignado al nacer </b>
+    <!-- Campo de selección para sexo asignado al nacer -->
+    <select name="sexo" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+      <option value="" disabled selected>Selecciona una opción</option>
+      <option value="Hombre">Hombre</option>
+      <option value="Mujer">Mujer</option>
+    </select>
+
+    <b> 9. Ingresar estado de nacimiento</b>
+    <!-- Campo de entrada para indicar estado de nacimiento -->
+    <select name="estado" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+      <option value="" disabled selected>Seleccione su estado</option>
+      <option value="Aguascalientes">Aguascalientes</option>
+      <option value="Baja California">Baja California</option>
+      <option value="Baja California Sur">Baja California Sur</option>
+      <option value="Campeche">Campeche</option>
+      <option value="Coahuila">Coahuila</option>  
+      <option value="Ciudad de México">Ciudad de México</option>
+      <option value="Colima">Colima</option>
+      <option value="Chiapas">Chiapas</option>
+      <option value="Chihuahua">Chihuahua</option>
+      <option value="Durango">Durango</option>
+      <option value="Guanajuato">Guanajuato</option>
+      <option value="Guerrero">Guerrero</option>
+      <option value="Hidalgo">Hidalgo</option>
+      <option value="Jalisco">Jalisco</option>
+      <option value="Estado de México">Estado de México</option>
+      <option value="Michoacán">Michoacán</option>
+      <option value="Morelos">Morelos</option>
+      <option value="Nayarit">Nayarit</option>
+      <option value="Nuevo León">Nuevo León</option>
+      <option value="Oaxaca">Oaxaca</option>
+      <option value="Puebla">Puebla</option>
+      <option value="Querétaro">Querétaro</option>
+      <option value="Quintana Roo">Quintana Roo</option>
+      <option value="San Luis Potosí">San Luis Potosí</option>
+      <option value="Sinaloa">Sinaloa</option>
+      <option value="Sonora">Sonora</option>
+      <option value="Tabasco">Tabasco</option>
+      <option value="Tamaulipas">Tamaulipas</option>
+      <option value="Tlaxcala">Tlaxcala</option>
+      <option value="Veracruz">Veracruz</option>
+      <option value="Yucatán">Yucatán</option>
+      <option value="Zacatecas">Zacatecas</option>
+    </select>
+
+    <b> 10. Ingresar estado de residencia (donde vive actualmente)</b>
+    <!-- Campo de entrada para indicar estado en el que actualmente vive -->
+    <select name="residencia" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+      <option value="" disabled selected>Seleccione su estado</option>
+      <option value="Aguascalientes">Aguascalientes</option>
+      <option value="Baja California">Baja California</option>
+      <option value="Baja California Sur">Baja California Sur</option>
+      <option value="Campeche">Campeche</option>
+      <option value="Coahuila">Coahuila</option>  
+      <option value="Ciudad de México">Ciudad de México</option>
+      <option value="Colima">Colima</option>
+      <option value="Chiapas">Chiapas</option>
+      <option value="Chihuahua">Chihuahua</option>
+      <option value="Durango">Durango</option>
+      <option value="Guanajuato">Guanajuato</option>
+      <option value="Guerrero">Guerrero</option>
+      <option value="Hidalgo">Hidalgo</option>
+      <option value="Jalisco">Jalisco</option>
+      <option value="Estado de México">Estado de México</option>
+      <option value="Michoacán">Michoacán</option>
+      <option value="Morelos">Morelos</option>
+      <option value="Nayarit">Nayarit</option>
+      <option value="Nuevo León">Nuevo León</option>
+      <option value="Oaxaca">Oaxaca</option>
+      <option value="Puebla">Puebla</option>
+      <option value="Querétaro">Querétaro</option>
+      <option value="Quintana Roo">Quintana Roo</option>
+      <option value="San Luis Potosí">San Luis Potosí</option>
+      <option value="Sinaloa">Sinaloa</option>
+      <option value="Sonora">Sonora</option>
+      <option value="Tabasco">Tabasco</option>
+      <option value="Tamaulipas">Tamaulipas</option>
+      <option value="Tlaxcala">Tlaxcala</option>
+      <option value="Veracruz">Veracruz</option>
+      <option value="Yucatán">Yucatán</option>
+      <option value="Zacatecas">Zacatecas</option>
+    </select>
+    
+    <!-- Campo de entrada para indicar si usted se a realizado algun tipo de cirugia o uso de hormonas -->
+    <b> 11. ¿Usted ha usado implantes o se ha realizado alguna cirugía o tratamiento hormonal para transicionar su cuerpo?</b>
+    <select name="transicionar" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+      <option value="" disabled selected>Selecciona una opción</option>
+      <option value="Sí">Sí</option>
+      <option value="No">No</option>
+    </select>
+
+    <!-- Campo de entrada para indicar si sabia que se pueden modificar los documentos de nacimiento -->
+    <b>12. ¿Sabía que existe la posibilidad de modificar documentos oficiales para el reconocimiento como hombre o mujer?</b>
+    <select name="sabiaModificarDocumentos" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+      <option value="">Seleccione una opción</option>
+      <option value="Sí">Sí</option>
+      <option value="Sí, pero tengo poca información">Sí, pero tengo poca información</option>
+      <option value="No">No</option>
+    </select>
+
+   <!-- Campo de entrada para indicar si ha modificado sus documentos como homnre o mujer -->
+    <b>13.  ¿Ha realizado la modificación de documentos oficiales para el reconocimiento como hombre o mujer?</b>
+    <select name="modificarDocumentos" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+      <option value="">Seleccione una opción</option>
+      <option value="Sí">Sí</option>
+      <option value="No">No</option>
+    </select>
+    
+  <!-- Botón para enviar el formulario -->
+    <button type="submit"  class="rounded-md bg-green-500 w-full text-lg text-white font-semibold p-2 my-3 hover:bg-green-600 focus:bg-green-700">Registrar</button>
+  
+  <!-- Mensaje de error si el inicio de sesión falla -->
+    {{#if error}}
+        <p class="text-red-500 font-bold text-lg my-3">* {{error}}</p>
+    {{/if}}  
+  </form>
+  
+  
+</div>
+
