@@ -50,15 +50,23 @@ function auth(req, res) {
   //Función que realiza el registro de usuarios.
 function storeUser(req, res) {
     const data = req.body;
+
+    const dedicaStr = data.dedicaEmpresa.join(',');
+    data.dedicaEmpresa = dedicaStr;
+
+     
+    const pagoStr = data.pago.join(',');
+    data.pago = pagoStr;
     
     req.getConnection((err, conn) => {
         //Se busca si existe un nombre de usuario registrado en la base de datos
         //que sea igual al introducido en el input de registrar usuario.
-        conn.query('SELECT * FROM registros WHERE nombreLegal = ?', [data.nombreLegal], (err, userdata) => {
+        conn.query('SELECT * FROM registros WHERE nombreLegal = ? AND correo = ?', [data.nombreLegal, data.correo], (err, userdata)  => {
             
           //Se revisa si existe respuesta por parte de la base de datos
             if(userdata.length > 0) {
-                res.render('login/register', { error: 'El nombre de usuario ya existe'});
+          
+                res.render('login/register', { error: 'Persona ya registrada'});
             } else {
               //Se realiza el registro del usuario.
                 req.getConnection((err, conn) => {
@@ -66,14 +74,15 @@ function storeUser(req, res) {
 
                 //req.session.loggedin = true;
                 req.session.name = "Gracias " + data.nombrePrefe;
-
+     
+          
             res.redirect('/');
         });
     });
             }
         });
     });
-    
+    console.log(data)
 }
 
 //Funcion que se encarga de realizar el logout o cerrar la sesión

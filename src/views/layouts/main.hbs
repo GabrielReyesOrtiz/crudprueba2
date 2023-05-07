@@ -12,41 +12,48 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
     <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
   </head>
-  <body class="bg-gray-200">
-    <nav class="flex py-5 bg-green-500 text-white px-24">
-      <div class="w-1/2 px-12 mr-auto">
-        <h1 class="text-2x1 font-bold"> Encuesta diagnostico 2023</h1>
+  <body class="bg-gray-100">
+    <nav class="flex items-center justify-between flex-wrap bg-pink-600 p-6">
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <svg class="fill-current h-8 w-8 mr-2" viewBox="0 0 24 24">
+          <path d="M12 0a12 12 0 0 0-12 12c0 6.627 5.373 12 12 12 6.627 0 12-5.373 12-12a12 12 0 0 0-12-12zm6 13h-5v5h-2v-5H6v-2h5V6h2v5h5v2z"/>
+        </svg>
+      <span class="font-semibold text-4xl tracking-tight">Encuesta diagnostico 2023</span>
       </div>
 
 
-      
-      <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-md lg:flex-grow">
+          {{#if name}}
+    
+          {{/if}}
+        </div>
+        <div>
+          {{#if name}}
+          <span class="font-semibold text-4xl tracking-tight" style="color: #70c1fe; animation: blink 1s linear infinite;">!!! Encuesta contestada con exito, {{name}} ¡¡¡</span>
 
-      <!-- En caso de que session haya almacenado un nombre, esto significa que se ha realizado un login
-      por lo que se muestra el nombre del usuario y se crea un boton rojo con el texto logout -->
-
-        {{#if name}}
-        <li class="nav-item px-4">
-          <p class="font-semibold">{{name}}</p>
-        </li>
-        
-          <li class="nav-item px-4">
-          <a href="/logout" class="nav-link font-semibold bg-red-500 text-white hover:bg-red-700
-           py-3 px-4 rounded-md">Contestar nueva encuesta</a>
-        </li>  
         {{else}}
-
-        <!-- Se crean los botones registrar y login que aparecen en todas las ventanas -->
-
-        <li class="nav-item px-4">
-          <a href="/register" class="nav-link font-semibold border-2 border-white hover:bg-white
-          hover:text-green-700 py-3 px-4 rounded-md">Registrar</a>
-        </li>      
-      {{/if}}
-      </ul>
+      
+        {{/if}}
+        </div>
+      </div>
 
     </nav>
     {{{body}}}
   </body>
 </html>
 
+
+<style>
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>

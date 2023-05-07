@@ -1,11 +1,14 @@
+
+
 <div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200 rounded-lg shadow-lg text-gray-800">
   
    <!-- Título del formulario -->  
-  <h1 class="text-5x1 font-bold text-center">Encuesta 2023</h1>  
+  <h1 class="text-5xl font-bold text-center text-pink-300">Encuesta 2023</h1> 
   
-  
-  <!-- Formulario para registrar usuarios -->
+    <!-- Formulario para registrar usuarios -->
   <form method="POST" class="mt-4" name="loginForm" >
+
+   <h2><span style="color: blue; font-weight: bold;">PARTE I. INFORMACIÓN PARA IDENTIFICACIÓN</span></h2><br>
 
     <b> 1. Fecha actual</b>
     <!-- Campo de entrada para fecha -->
@@ -24,10 +27,10 @@
               fechaInput.value = `${dia}/${mes}/${año}`;
             </script>
 
-     <b> 2. Ingresar correo </b>
-     <!-- Campo de entrada para correo -->
+    <b> 2. Ingresar correo </b>
+    <!-- Campo de entrada para correo -->
     <input type="email" name="correo" placeholder="ejemplo@gmail.com" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
-        
+     
     <b> 3. Ingresar edad  </b>
     <!-- Campo de entrada para años cumplidos -->
     <input type="number" name="años" placeholder="Años cumplidos" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required min="0" max="130">
@@ -149,7 +152,7 @@
     <!-- Campo de entrada para indicar si sabia que se pueden modificar los documentos de nacimiento -->
     <b>12. ¿Sabía que existe la posibilidad de modificar documentos oficiales para el reconocimiento como hombre o mujer?</b>
     <select name="sabiaModificarDocumentos" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
-      <option value="">Seleccione una opción</option>
+      <option value="" disabled selected>Seleccione una opción</option>
       <option value="Sí">Sí</option>
       <option value="Sí, pero tengo poca información">Sí, pero tengo poca información</option>
       <option value="No">No</option>
@@ -158,14 +161,121 @@
    <!-- Campo de entrada para indicar si ha modificado sus documentos como homnre o mujer -->
     <b>13.  ¿Ha realizado la modificación de documentos oficiales para el reconocimiento como hombre o mujer?</b>
     <select name="modificarDocumentos" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
-      <option value="">Seleccione una opción</option>
+      <option value="" disabled selected>Seleccione una opción</option>
+      <option value="Sí">Sí</option>
+      <option value="No">No</option>
+    </select>  <br><br>
+   
+      <h2><span style="color: blue; font-weight: bold;">PARTE II. ESCOLARIDAD</span></h2><br>
+
+    <!-- Campo de entrada para indicar el nivel de estudios -->
+    <b>14. ¿Hasta qué año y grado aprobó en la escuela? </b>
+    <select name="nivelEstudios" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+      <option value="" disabled selected>Seleccione una opción</option>
+      <option value="Ninguno">Ninguno</option>
+      <option value="Preescolar">Preescolar</option>
+      <option value="Primaria">Primaria</option>
+      <option value="Secundaria">Secundaria</option>
+      <option value="Normal básica">Normal básica</option>
+      <option value="Carrera técnica con secundaria terminada">Carrera técnica con secundaria terminada</option>
+      <option value="Preparatoria o bachillerato">Preparatoria o bachillerato</option>
+      <option value="Carrera técnica con preparatoria terminada">Carrera técnica con preparatoria terminada</option>
+      <option value="Licenciatura o profesional">Licenciatura o profesional</option>
+      <option value="Especialidad">Especialidad</option>
+      <option value="Maestría">Maestría</option>
+      <option value="Doctorado">Doctorado</option>
+    </select><br><br>
+
+   <h2><span style="color: blue; font-weight: bold;">PARTE III. SITUACIÓN LABORAL</span></h2><br>
+
+    <!-- Campo de entrada para indicar si trabaja actualmente o trabajó en el último año -->
+    <b>15. ¿Trabaja actualmente o trabajó en el último año?</b>
+    <select name="trabaja" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+      <option value="" disabled selected>Seleccione una opción</option>
       <option value="Sí">Sí</option>
       <option value="No">No</option>
     </select>
-    
+
+    <!-- Campo de entrada para indicar el nombre de la empresa, negocio o institución -->
+    <b>16. ¿Cuál es el nombre de la empresa, negocio o institución para la que trabaja o trabajó en el último año?</b>
+    <input type="text" name="nombreEmpresa" placeholder="Nombre de empresa" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+
+    <!-- Campo de entrada para indicar la actividad de la empresa en la que trabaja o trabajó -->
+    <b>17. ¿A qué se dedica la empresa, negocio o institución en la que trabaja (o trabajó)? Marque todas las opciones que correspondan:</b><br>
+      <input type="checkbox" name="dedicaEmpresa" value="Poder judicial o poder legislativo"> Poder judicial o poder legislativo<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Empresa pública o paraestatal"> Empresa pública o paraestatal<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Hospital, clínica pública"> Hospital, clínica pública<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Hospital, clínica privada"> Hospital, clínica privada<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Escuela pública (todos los niveles)"> Escuela pública (todos los niveles)<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Escuela privada (todos los niveles)"> Escuela privada (todos los niveles)<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Gobierno o dependencias federales"> Gobierno o dependencias federales<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Gobierno del estado"> Gobierno del estado<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Gobierno del municipio"> Gobierno del municipio<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Organismo autónomo (IFE, Institutos Estatales Electorales, Comisiones Nacionales o Estatales de Derechos Humanos)"> Organismo autónomo (IFE, Institutos Estatales Electorales, Comisiones Nacionales o Estatales de Derechos Humanos)<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Iglesia, asociación profesional, cámara o sindicato"> Iglesia, asociación profesional, cámara o sindicato<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Asociación civil no clasificada en las opciones anteriores"> Asociación civil no clasificada en las opciones anteriores<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Organismo internacional"> Organismo internacional<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Partido político"> Partido político<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Agricultura"> Agricultura<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Alimentos y restaurantes"> Alimentos y restaurantes<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Comercio"> Comercio<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Construcción"> Construcción<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Entretenimiento"> Entretenimiento<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Ganadería"> Ganadería<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Generación, transmisión y distribución de energía eléctrica"> Generación, transmisión y distribución de energía eléctrica<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Hospedajes"> Hospedajes<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Minería"> Minería<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Servicios de belleza"> Servicios de belleza<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Servicios inmobiliarios y de alquiler"> Servicios inmobiliarios y de alquiler<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Transportes"> Transportes<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Ventas al por menor"> Ventas al por menor<br>
+      <input type="checkbox" name="dedicaEmpresa" value="Ninguna de las anteriores"> Ninguna de las anteriores<br>
+      <input type="checkbox" name="dedicaEmpresa" value="No sabe"> No sabe<br>
+      <input type="checkbox" name="dedicaEmpresa" value=""> Otra (especifique): <input type="text" name="dedicaEmpresa" placeholder="Ingresar otra respuesta"><br> <br> 
+          
+
+<!-- Campo de entrada para indicar como le pagan en su trabajo -->
+    <b>18. ¿Cómo le pagan? (elija todas las que considere)</b><br>
+      <input type="checkbox" name="pago" value="Por comisión"> Por comisión<br>
+      <input type="checkbox" name="pago" value="A destajo (por pieza), servicio u obra realizada"> A destajo (por pieza), servicio u obra realizada<br>
+      <input type="checkbox" name="pago" value="Por honorarios"> Por honorarios<br>
+      <input type="checkbox" name="pago" value="Con propinas"> Con propinas<br>
+      <input type="checkbox" name="pago" value="Con bonos de compensación o de productividad"> Con bonos de compensación o de productividad<br>
+      <input type="checkbox" name="pago" value="Con vales o productos comercializables"> Con vales o productos comercializables<br>
+      <input type="checkbox" name="pago" value="Recibe sueldo, salario o jornal"> Recibe sueldo, salario o jornal<br>
+      <input type="checkbox" name="pago" value="Lo que le deja su negocio"> Lo que le deja su negocio<br>
+      <input type="checkbox" name="pago" value="No le pagan ni recibe ingresos (incluye autoconsumo agropecuario)"> No le pagan ni recibe ingresos (incluye autoconsumo agropecuario)<br>
+      <input type="checkbox" name="pago" value="Ninguna de las anteriores"> Ninguna de las anteriores<br>
+      <input type="checkbox" name="pago" value=""> Otra ¿Cuál es? <input type="text" name="pago"  placeholder="Ingresar otra respuesta"><br><br>
+
+<!-- Campo de entrada para indicar si tiene jefe  -->
+    <b>19. ¿En su trabajo tiene o tenía un jefe(a) o superior?</b>
+    <select name="tieneJefe" class="border border-gray-200 w-full text-lg placeholder-gray-500 p-2 my-2 bg-gray-200 focus:bg-white" required>
+      <option value="" disabled selected>Seleccione una opción</option>
+      <option value="Sí">Sí</option>
+      <option value="No">No</option>
+    </select> <br>
+
+    <!-- Campo de selección para indicar el tipo de trabajo -->
+    <b>20. ¿En su trabajo (actividad) usted es?</b>
+    <select name="tipoPuesto" class="border border-gray-200 w-full text-lg p-2 my-2 bg-gray-200 focus:bg-white" required>
+      <option value="" disabled selected>Seleccione una opción</option>
+      <option value="Empleado(a) u obrero(a)">Empleado(a) u obrero(a)</option>
+      <option value="Jornalero(a) o peón(a)">Jornalero(a) o peón(a)</option>
+      <option value="Ayudante con pago">Ayudante con pago</option>
+      <option value="Patrón(a) o empleador(a)">Patrón(a) o empleador(a)</option>
+      <option value="Trabajador(a) por cuenta propia">Trabajador(a) por cuenta propia</option>
+      <option value="Trabajador(a) sin pago">Trabajador(a) sin pago</option>
+      <option value="Otra">Otra</option>
+    </select>
+
+
+
   <!-- Botón para enviar el formulario -->
-    <button type="submit"  class="rounded-md bg-green-500 w-full text-lg text-white font-semibold p-2 my-3 hover:bg-green-600 focus:bg-green-700">Registrar</button>
+   <button type="submit" class="rounded-md bg-pink-500 w-full text-lg text-white font-semibold p-2 my-3 hover:bg-pink-600 focus:bg-pink-700">Registrar</button>
   
+ 
+
   <!-- Mensaje de error si el inicio de sesión falla -->
     {{#if error}}
         <p class="text-red-500 font-bold text-lg my-3">* {{error}}</p>
